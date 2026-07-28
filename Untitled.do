@@ -1,0 +1,59 @@
+******************************************
+*0.Get the data 
+******************************************
+use http://www.stata-press.com/data/r18/iris, clear
+
+global dir "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris"
+
+cd "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris"
+
+******************************************
+*1.Print the data
+******************************************
+
+
+list
+
+
+******************************************
+*2.Save the data
+******************************************
+
+save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris\Iris.dta", replace
+
+
+******************************************
+*3.Filter the Setosa data
+******************************************
+tab iris
+tab iris, nolabel
+
+*Setosa == 1 
+
+keep if iris == 1 
+
+
+save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris", replace
+
+******************************************
+*4.Spilt the Iris data
+******************************************
+
+use http://www.stata-press.com/data/r18/iris, clear
+
+splitsample, generate(svar, replace) split(0.7 0.3) show rseed(16)
+
+frame put iris seplen sepwid petlen petwid if svar==1, into(training)
+frame put iris seplen sepwid petlen petwid if svar==2, into(test)
+frames dir
+
+
+cd "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris"
+
+summarize seplen sepwid petlen
+summarize seplen sepwid petlen
+
+******************************************
+*5. Frequency
+******************************************
+table iris
