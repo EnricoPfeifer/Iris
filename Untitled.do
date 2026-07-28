@@ -32,8 +32,8 @@ tab iris, nolabel
 
 keep if iris == 1 
 
-
-save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris", replace
+// test branch merge 
+save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris\setoa2.cvs", replace
 
 ******************************************
 *4.Spilt the Iris data
@@ -48,7 +48,7 @@ frame put iris seplen sepwid petlen petwid if svar==2, into(test)
 frames dir
 
 
-cd "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris"
+cd "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris\"
 
 summarize seplen sepwid petlen
 summarize seplen sepwid petlen
