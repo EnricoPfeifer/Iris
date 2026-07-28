@@ -33,7 +33,7 @@ tab iris, nolabel
 keep if iris == 1 
 
 
-save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris\setoa.cvs", replace
+save "C:\Users\rmjlepf\OneDrive - University College London\Equalise\Git\Iris\setoa2.cvs", replace
 
 ******************************************
 *4.Spilt the Iris data
